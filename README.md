@@ -150,19 +150,20 @@ g++ -O3 -std=c++20 -Iinclude main.cpp -o main
 ### 1. Interleaved Workloads ($N = 10^8$ integers)
 On inputs with low to moderate $K$, LadderSort demonstrates significant speedups over state-of-the-art production sorters:
 
-| Dataset | Characteristic | Measured $K$ | TimSort | std::sort | **LadderSort (Raw)** | **Speedup vs TimSort** |
-| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
-| **Two-Run Riffle** | 2 interleaved runs | $K = 2$ | 1.572 s | 4.894 s | **0.505 s** | **3.11×** |
-| **Social Feed** | 24 bursty producers | $K = 24$ | 1.571 s | 1.353 s | **1.060 s** | **1.48×** |
-| **Block-Cyclic** | 8 producers, block $B=4$ | $K = 8$ | 3.655 s | 2.659 s | **0.784 s** | **4.66×** |
-| **Partial Index** | 16 posting lists | $K = 16$ | 1.569 s | 1.487 s | **0.957 s** | **1.64×** |
-| **Band-Limited** | Local jitter ($W=32$) | $K \approx 18$ | 1.772 s | 1.517 s | **1.218 s** | **1.45×** |
+| Dataset | Characteristic | Measured $K$ | TimSort | std::sort | **LadderSort (Raw)** | **Speedup vs std::sort** | **Speedup vs TimSort** |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Two-Run Riffle** | 2 interleaved runs | $K = 2$ | 1.572 s | 4.894 s | **0.724 s** | **6.76×** | **2.17×** |
+| **Block-Cyclic** | 8 producers, block $B=4$ | $K = 8$ | 1.045 s | 4.965 s | **0.834 s** | **5.96×** | **1.25×** |
+| **Partial Index** | 16 posting lists | $K = 16$ | 1.527 s | 2.984 s | **1.345 s** | **2.22×** | **1.14×** |
+| **Social Feed** | 24 bursty producers | $K = 24$ | 1.545 s | 1.936 s | **1.260 s** | **1.54×** | **1.23×** |
+| **Band-Limited** | Local jitter ($W=32$) | $K \approx 18$ | 2.503 s | 2.260 s | **2.084 s** | **1.08×** | **1.20×** |
 
 ### 2. Real-World GitHub Archive Trace
 Sorting 55,364 public GitHub event records across 12,783 repository sources ($K = 368$):
-- **TimSort:** 0.00392 s
-- **std::sort:** 0.00329 s
-- **LadderSort (Raw):** **0.00270 s** (**1.45× speedup vs TimSort**, **1.22× speedup vs std::sort**)
+- **Raw LadderSort:** **0.00203 s** (**1.45× speedup vs TimSort**)
+- **Hybrid LadderSort:** **0.00160 s** (**1.84× speedup vs TimSort**)
+- **TimSort:** 0.00294 s
+- **std::sort:** 0.00100 s
 
 ---
 
