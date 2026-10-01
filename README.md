@@ -30,8 +30,9 @@ While classical run-adaptive algorithms like **TimSort** and **PowerSort** achie
 **LadderSort** is designed specifically to overcome this limitation. It models the presortedness of an input sequence $A$ by $K^*(A)$, the minimum number of nondecreasing subsequences needed to cover $A$. By Dilworth's Theorem, this quantity equals the length of the Longest strictly Decreasing Subsequence, $\mathrm{LDS}(A)$.
 
 LadderSort achieves:
-- **Optimal Online Decomposition:** Recovers the offline minimum partition count $K^*(A) = \mathrm{LDS}(A)$ in a single forward pass without any offline preprocessing.
-- **Adaptive Time Complexity:** Sorts in $O(N(1 + \log(K + 1)))$ time, matching the information-theoretic lower bound for presortedness measure $K$.
+- **Optimal Online Decomposition:** Recovers the offline minimum partition count $K^*(A) = \mathrm{LDS}(A)$ in a single forward pass without any offline preprocessing (Theorem IV.1).
+- **Adaptive Time Complexity:** Sorts in $O(N \log(K + 1))$ time (tight $\Theta(N \log K)$ for $K \ge 2$, $\Theta(N)$ for $K=1$), matching the information-theoretic lower bound for presortedness measure $K$ (Lemma IV.3).
+- **Auxiliary Space Complexity:** Requires $O(N + K)$ auxiliary space to materialize ladders and the loser-tree tournament (Lemma IV.4).
 - **Graceful Hybrid Guardrail:** Monitors $K$ online and automatically falls back to introsort/`std::sort` if $K > \lceil\sqrt{N}\rceil$, guaranteeing an $O(N \log N)$ worst-case ceiling.
 
 ---
@@ -94,15 +95,29 @@ Input Sequence A of length N
 
 ## Algorithm Comparison
 
-| Algorithm | Presortedness Measure | Interleaved Streams ($K \ll N$) | Contiguous Runs | Worst-Case Time | Aux. Memory |
+| Algorithm | Presortedness Measure | Interleaved Streams ($K \ll N$) | Contiguous Runs | Worst-Case Time | Aux. Space |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **LadderSort (Raw)** | $\mathrm{LDS}(A) = K$ | **$O(N \log K)$** | $O(N)$ | **$O(N \log N)$** | $O(N)$ |
-| **LadderSort (Hybrid)** | $\mathrm{LDS}(A) = K$ | **$O(N \log K)$** | $O(N)$ | **$O(N \log N)$** | $O(N)$ |
+| **LadderSort (Raw)** | $\mathrm{LDS}(A) = K$ | **$O(N \log K)$** | $O(N)$ | **$O(N \log N)$** | **$O(N + K)$** |
+| **LadderSort (Hybrid)** | $\mathrm{LDS}(A) = K$ | **$O(N \log K)$** | $O(N)$ | **$O(N \log N)$** | **$O(N + K)$** |
 | **TimSort** [Auger et al.] | $\mathrm{Runs}(A)$ | $O(N \log N)$ | $O(N)$ | $O(N \log N)$ | $O(N)$ |
 | **PowerSort** [Munro & Wild] | $\mathrm{Runs}(A)$ | $O(N \log N)$ | $O(N)$ | $O(N \log N)$ | $O(N)$ |
-| **PatienceSort** [Aldous & Diaconis] | $\mathrm{LDS}(A)$ | Measures $K$ offline | $O(N \log N)$ | $O(N \log N)$ | $O(N)$ |
-| **EncroachingLists** [Skiena] | Heuristic | $O(N K)$ (unhinted) | $O(N)$ | $O(N^2)$ | $O(N)$ |
+| **PatienceSort** [Aldous & Diaconis] | $\mathrm{LDS}(A)$ | Measures $K$ offline | $O(N \log N)$ | $O(N \log N)$ | $O(N + K)$ |
+| **EncroachingLists** [Skiena] | Heuristic | $O(N K)$ (unhinted) | $O(N)$ | $O(N^2)$ | $O(N + K)$ |
 | **std::sort** (Introsort) | None | $O(N \log N)$ | $O(N \log N)$ | $O(N \log N)$ | $O(\log N)$ |
+
+### Parametric Time and Space Bounds (Table 10 in Manuscript)
+
+As established in Section VI-E of the manuscript, LadderSort's asymptotic bounds interpolate smoothly between linear time on sorted input and $O(N \log N)$ on adversarial input:
+
+| Bound | Expression | Condition | Interpretation |
+| :---: | :--- | :--- | :--- |
+| $O$ | $O(N \log(K + 1) + K)$ | All $K \ge 1$ | Phase 1 + loser-tree build |
+| $\Theta$ | $\Theta(N)$ | $K = 1$ | Linear on sorted input |
+| $\Theta$ | $\Theta(N \log K)$ | $K \ge 2$ | Tight for $K \ge 2$ |
+| $\Omega$ | $\Omega(N)$ | All $K$ | Must read $N$ elements |
+| $o$ | $o(N \log N)$ | $K = N^{o(1)}$ | Sub-$N \log N$ for slow-growing $K$ |
+| $\Theta$ | $\Theta(N \log \sqrt{N})$ | $K = \Theta(\sqrt{N})$ | Random-permutation case |
+| **Space** | **$O(N + K)$** | **All $K$** | **Linear auxiliary** |
 
 ---
 
@@ -235,27 +250,39 @@ make clean
 All benchmarks run deterministically using seeds `1` through `10`.
 
 ```bash
-# 1. Main Runtime Performance (Tables 1 & 2 in manuscript)
+# 1. Main Runtime Performance (Section VI-A, Tables 2 & 3 in manuscript)
 ./run/run_phase2_main_runtime.sh
 python3 run/summarize_phase2.py
 
-# 2. K-Sensitivity & K-Sweep (Table 3 & Figures in manuscript)
+# 2. K-Sensitivity & K-Sweep (Section VI-B, Table 2 & Figures 3 & 4 in manuscript)
 ./run/run_phase3_k_sweep.sh
 ./run/run_phase3_k_stats.sh
 python3 run/summarize_phase3.py
 
-# 3. Component Ablation Studies (Table 4 in manuscript)
-# Tests NoHint, NoGallop, HeapMerge, and StableMode:
+# 3. Baseline Comparisons (Section VI-D, Table 4 in manuscript)
+./run/run_patience_baseline.sh
+./run/run_encroaching_baseline.sh
+python3 run/summarize_phase4.py
+
+# 4. Component Ablation Studies (Section VI-D, Table 5 in manuscript)
+# Evaluates NoHint, NoGallop, HeapMerge, and StableMode:
 ./run/run_phase4_ablation_riffle.sh
 ./run/run_phase4_ablation_social.sh
 python3 run/summarize_phase4.py
 
-# 4. Comparison Counts & Peak Memory RSS (Tables 5 & 6 in manuscript)
-./run/run_phase5_comparisons.sh
+# 5. Hybrid Fallback Evaluation (Section VI-D, Table 6 in manuscript)
+./run/run_phase4_hybrid.sh
+python3 run/summarize_phase4.py
+
+# 6. Peak Memory RSS Footprint (Section VI-E, Table 7 in manuscript)
 ./run/run_phase5_memory.sh
 python3 run/summarize_phase5.py
 
-# 5. Real-World GitHub Archive Trace (Table 7 in manuscript)
+# 7. Exact Comparison Counts (Section VI-E, Table 8 in manuscript)
+./run/run_phase5_comparisons.sh
+python3 run/summarize_phase5.py
+
+# 8. Real-World GitHub Archive Trace (Section VI-D, Table 9 in manuscript)
 ./run/run_phase6_real_trace.sh
 python3 run/summarize_phase6.py
 ```
