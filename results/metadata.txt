@@ -1,0 +1,13 @@
+Machine: 2020 MacBook Air
+CPU: Apple M1 8-core
+RAM: 8 GB unified memory
+OS: macOS 15.6.1
+
+Compiler: /opt/homebrew/bin/g++-15
+Flags: -O3 -march=native -flto -funroll-loops -std=c++20
+Include path: -I third_party/cpp-TimSort/include
+
+Execution policy:
+- single-threaded
+- no explicit SIMD
+- auto-vectorization only

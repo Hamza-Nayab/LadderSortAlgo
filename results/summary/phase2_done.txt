@@ -1,0 +1,18 @@
+Phase 2 completed.
+
+Raw file:
+results/raw/01_main_runtime_raw.csv
+
+Summary file:
+results/summary/02_main_runtime_summary.csv
+
+Suite:
+8 datasets
+3 sizes: 1e6, 1e7, 1e8
+7 algorithms
+10 timed rounds
+1 warm-up per configuration
+correctness checked after every run
+
+Purpose:
+This result pack is the official source for all main runtime tables and plots.

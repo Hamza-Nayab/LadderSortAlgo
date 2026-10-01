@@ -1,0 +1,61 @@
+Phase 6 Real Trace Notes
+
+source: GH Archive
+source URLs:
+- https://data.gharchive.org/2015-01-01-0.json.gz
+- https://data.gharchive.org/2015-01-01-12.json.gz
+- https://data.gharchive.org/2015-01-01-15.json.gz
+- https://data.gharchive.org/2015-01-01-18.json.gz
+- https://data.gharchive.org/2015-01-01-21.json.gz
+- https://data.gharchive.org/2015-01-01-3.json.gz
+- https://data.gharchive.org/2015-01-01-6.json.gz
+- https://data.gharchive.org/2015-01-01-9.json.gz
+date/hour collected: 2015-01-01, matched hours from input files
+number of raw files parsed: 8
+raw file names:
+- gharchive_2015-01-01-0.json.gz
+- gharchive_2015-01-01-12.json.gz
+- gharchive_2015-01-01-15.json.gz
+- gharchive_2015-01-01-18.json.gz
+- gharchive_2015-01-01-21.json.gz
+- gharchive_2015-01-01-3.json.gz
+- gharchive_2015-01-01-6.json.gz
+- gharchive_2015-01-01-9.json.gz
+
+preprocessing steps:
+1. Parsed GH Archive JSON lines from the downloaded gzip file(s).
+2. Kept record_id from event["id"] when present, otherwise assigned a sequential id.
+3. Kept source_id from event["repo"]["id"] when present, else event["repo"]["name"].
+4. Parsed event["created_at"] as a UTC timestamp in milliseconds.
+5. Dropped rows missing timestamp or source_id.
+6. Grouped events by source_id.
+7. Within each source_id, sorted by timestamp_ms and then record_id.
+8. Kept only sources with at least 2 events.
+9. Built a deterministic sticky-burst interleaving with seed 1; burst sizes are 1..16 events.
+10. Preserved local timestamp order inside each source stream and did not globally sort the final output.
+
+parsed rows before source-size filtering: 73330
+dropped rows missing timestamp or source_id: 0
+eligible rows after preprocessing: 55364
+total rows after preprocessing: 55364
+total unique sources: 12783
+max records limit: none
+measured K: 368, measured as the RawLadderSort median ladder count over 10 benchmark rounds
+
+reason this is an interleaved-stream workload:
+public GitHub events are produced by many repositories; each repository stream is locally ordered by event time; the benchmark sequence is a deterministic interleaving of those repository streams.
+
+Phase 6 Benchmark Summary
+
+measured K from RawLadderSort median_k: 368
+benchmarked algorithms: RawLadderSort, HybridLadderSort, TimSort, StdSort, StableSort
+benchmark rounds: 10
+benchmark input rows: 55364
+raw file path: results/raw/19_real_trace_raw.csv
+summary file path: results/summary/20_real_trace_summary.csv
+median runtimes by algorithm:
+- HybridLadderSort: 0.001599708 sec
+- RawLadderSort: 0.002025958 sec
+- StableSort: 0.000688479 sec
+- StdSort: 0.001000938 sec
+- TimSort: 0.002939146 sec

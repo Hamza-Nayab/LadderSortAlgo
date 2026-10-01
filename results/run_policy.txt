@@ -1,0 +1,15 @@
+Main timing benchmarks:
+- 1 warm-up run
+- 10 timed rounds
+- fixed seeds from seeds.txt
+
+Ablation:
+- 1 warm-up run
+- 10 timed rounds
+
+Instrumented benchmarks:
+- 1 warm-up run
+- 3 timed rounds unless otherwise stated
+
+Correctness:
+- std::is_sorted check after every run

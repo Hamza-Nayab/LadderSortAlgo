@@ -1,0 +1,31 @@
+# Binaries and build artifacts
+bin/*
+!bin/.gitkeep
+*.o
+*.a
+*.so
+*.dylib
+*.out
+*.exe
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# OS specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

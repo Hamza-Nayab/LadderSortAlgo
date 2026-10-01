@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="560" viewBox="0 0 980 560">
+<rect width="100%" height="100%" fill="white"/>
+<line x1="78.00" y1="442.00" x2="952.00" y2="442.00" stroke="rgb(222,222,222)" stroke-width="0.7"/>
+<line x1="78.00" y1="366.40" x2="952.00" y2="366.40" stroke="rgb(222,222,222)" stroke-width="0.7"/>
+<line x1="78.00" y1="290.80" x2="952.00" y2="290.80" stroke="rgb(222,222,222)" stroke-width="0.7"/>
+<line x1="78.00" y1="215.20" x2="952.00" y2="215.20" stroke="rgb(222,222,222)" stroke-width="0.7"/>
+<line x1="78.00" y1="139.60" x2="952.00" y2="139.60" stroke="rgb(222,222,222)" stroke-width="0.7"/>
+<line x1="78.00" y1="64.00" x2="952.00" y2="64.00" stroke="rgb(222,222,222)" stroke-width="0.7"/>
+<line x1="78.00" y1="64.00" x2="78.00" y2="442.00" stroke="rgb(70,70,70)" stroke-width="1.2"/>
+<line x1="78.00" y1="442.00" x2="952.00" y2="442.00" stroke="rgb(70,70,70)" stroke-width="1.2"/>
+<line x1="78.00" y1="354.80" x2="952.00" y2="354.80" stroke="rgb(70,70,70)" stroke-width="1.0" stroke-dasharray="5 4"/>
+<rect x="86.74" y="440.90" width="16.91" height="1.10" fill="rgb(55,126,184)"/>
+<rect x="107.65" y="435.72" width="16.91" height="6.28" fill="rgb(77,175,74)"/>
+<rect x="128.56" y="354.80" width="16.91" height="87.20" fill="rgb(228,26,28)"/>
+<rect x="149.46" y="399.79" width="16.91" height="42.21" fill="rgb(152,78,163)"/>
+<rect x="183.85" y="440.99" width="16.91" height="1.01" fill="rgb(55,126,184)"/>
+<rect x="204.76" y="435.57" width="16.91" height="6.43" fill="rgb(77,175,74)"/>
+<rect x="225.67" y="354.80" width="16.91" height="87.20" fill="rgb(228,26,28)"/>
+<rect x="246.57" y="400.08" width="16.91" height="41.92" fill="rgb(152,78,163)"/>
+<rect x="280.96" y="441.41" width="16.91" height="0.59" fill="rgb(55,126,184)"/>
+<rect x="301.87" y="439.55" width="16.91" height="2.45" fill="rgb(77,175,74)"/>
+<rect x="322.78" y="354.80" width="16.91" height="87.20" fill="rgb(228,26,28)"/>
+<rect x="343.69" y="399.70" width="16.91" height="42.30" fill="rgb(152,78,163)"/>
+<rect x="378.07" y="307.04" width="16.91" height="134.96" fill="rgb(55,126,184)"/>
+<rect x="398.98" y="222.75" width="16.91" height="219.25" fill="rgb(77,175,74)"/>
+<rect x="419.89" y="354.80" width="16.91" height="87.20" fill="rgb(228,26,28)"/>
+<rect x="440.80" y="129.56" width="16.91" height="312.44" fill="rgb(152,78,163)"/>
+<rect x="475.18" y="302.85" width="16.91" height="139.15" fill="rgb(55,126,184)"/>
+<rect x="496.09" y="210.19" width="16.91" height="231.81" fill="rgb(77,175,74)"/>
+<rect x="517.00" y="354.80" width="16.91" height="87.20" fill="rgb(228,26,28)"/>
+<rect x="537.91" y="112.05" width="16.91" height="329.95" fill="rgb(152,78,163)"/>
+<rect x="572.30" y="303.99" width="16.91" height="138.01" fill="rgb(55,126,184)"/>
+<rect x="593.20" y="200.86" width="16.91" height="241.14" fill="rgb(77,175,74)"/>
+<rect x="614.11" y="354.80" width="16.91" height="87.20" fill="rgb(228,26,28)"/>
+<rect x="635.02" y="92.00" width="16.91" height="350.00" fill="rgb(152,78,163)"/>
+<rect x="669.41" y="267.81" width="16.91" height="174.19" fill="rgb(55,126,184)"/>
+<rect x="690.31" y="284.51" width="16.91" height="157.49" fill="rgb(77,175,74)"/>
+<rect x="711.22" y="354.80" width="16.91" height="87.20" fill="rgb(228,26,28)"/>
+<rect x="732.13" y="361.34" width="16.91" height="80.66" fill="rgb(152,78,163)"/>
+<rect x="766.52" y="294.33" width="16.91" height="147.67" fill="rgb(55,126,184)"/>
+<rect x="787.43" y="289.28" width="16.91" height="152.72" fill="rgb(77,175,74)"/>
+<rect x="808.33" y="354.80" width="16.91" height="87.20" fill="rgb(228,26,28)"/>
+<rect x="829.24" y="376.61" width="16.91" height="65.39" fill="rgb(152,78,163)"/>
+<rect x="863.63" y="312.42" width="16.91" height="129.58" fill="rgb(55,126,184)"/>
+<rect x="884.54" y="297.10" width="16.91" height="144.90" fill="rgb(77,175,74)"/>
+<rect x="905.44" y="354.80" width="16.91" height="87.20" fill="rgb(228,26,28)"/>
+<rect x="926.35" y="381.96" width="16.91" height="60.04" fill="rgb(152,78,163)"/>
+<rect x="78.00" y="513.00" width="14.00" height="14.00" fill="rgb(55,126,184)"/>
+<rect x="238.00" y="513.00" width="14.00" height="14.00" fill="rgb(77,175,74)"/>
+<rect x="398.00" y="513.00" width="14.00" height="14.00" fill="rgb(228,26,28)"/>
+<rect x="558.00" y="513.00" width="14.00" height="14.00" fill="rgb(152,78,163)"/>
+<text x="490.00" y="30.00" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#222">Phase 4 Hybrid Speedup vs TimSort</text>
+<text x="24.00" y="253.00" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="middle" fill="#222">Speedup vs TimSort</text>
+<text x="68.00" y="446.00" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="end" fill="#222">0.00</text>
+<text x="68.00" y="370.40" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="end" fill="#222">0.87</text>
+<text x="68.00" y="294.80" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="end" fill="#222">1.73</text>
+<text x="68.00" y="219.20" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="end" fill="#222">2.60</text>
+<text x="68.00" y="143.60" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="end" fill="#222">3.47</text>
+<text x="68.00" y="68.00" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="end" fill="#222">4.34</text>
+<text x="126.56" y="486.00" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="middle" fill="#222">descending
+1M</text>
+<text x="223.67" y="486.00" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="middle" fill="#222">descending
+10M</text>
+<text x="320.78" y="486.00" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="middle" fill="#222">descending
+100M</text>
+<text x="417.89" y="486.00" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="middle" fill="#222">random
+1M</text>
+<text x="515.00" y="486.00" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="middle" fill="#222">random
+10M</text>
+<text x="612.11" y="486.00" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="middle" fill="#222">random
+100M</text>
+<text x="709.22" y="486.00" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="middle" fill="#222">block_cyclic
+1M</text>
+<text x="806.33" y="486.00" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="middle" fill="#222">block_cyclic
+10M</text>
+<text x="903.44" y="486.00" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="middle" fill="#222">block_cyclic
+100M</text>
+<text x="98.00" y="525.00" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="start" fill="#222">RawLadderSort</text>
+<text x="258.00" y="525.00" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="start" fill="#222">HybridLadderSort</text>
+<text x="418.00" y="525.00" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="start" fill="#222">TimSort</text>
+<text x="578.00" y="525.00" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="start" fill="#222">StdSort</text>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="560" viewBox="0 0 980 560">
+<rect width="100%" height="100%" fill="white"/>
+<line x1="78.00" y1="442.00" x2="952.00" y2="442.00" stroke="rgb(222,222,222)" stroke-width="0.7"/>
+<line x1="78.00" y1="366.40" x2="952.00" y2="366.40" stroke="rgb(222,222,222)" stroke-width="0.7"/>
+<line x1="78.00" y1="290.80" x2="952.00" y2="290.80" stroke="rgb(222,222,222)" stroke-width="0.7"/>
+<line x1="78.00" y1="215.20" x2="952.00" y2="215.20" stroke="rgb(222,222,222)" stroke-width="0.7"/>
+<line x1="78.00" y1="139.60" x2="952.00" y2="139.60" stroke="rgb(222,222,222)" stroke-width="0.7"/>
+<line x1="78.00" y1="64.00" x2="952.00" y2="64.00" stroke="rgb(222,222,222)" stroke-width="0.7"/>
+<line x1="78.00" y1="64.00" x2="78.00" y2="442.00" stroke="rgb(70,70,70)" stroke-width="1.2"/>
+<line x1="78.00" y1="442.00" x2="952.00" y2="442.00" stroke="rgb(70,70,70)" stroke-width="1.2"/>
+<line x1="78.00" y1="271.66" x2="952.00" y2="271.66" stroke="rgb(70,70,70)" stroke-width="1.0" stroke-dasharray="5 4"/>
+<rect x="93.73" y="271.66" width="45.11" height="170.34" fill="rgb(55,126,184)"/>
+<rect x="142.84" y="271.66" width="45.11" height="170.34" fill="rgb(77,175,74)"/>
+<rect x="191.96" y="271.66" width="45.11" height="170.34" fill="rgb(228,26,28)"/>
+<rect x="268.53" y="150.89" width="45.11" height="291.11" fill="rgb(55,126,184)"/>
+<rect x="317.64" y="143.23" width="45.11" height="298.77" fill="rgb(77,175,74)"/>
+<rect x="366.76" y="223.84" width="45.11" height="218.16" fill="rgb(228,26,28)"/>
+<rect x="443.33" y="277.30" width="45.11" height="164.70" fill="rgb(55,126,184)"/>
+<rect x="492.44" y="272.52" width="45.11" height="169.48" fill="rgb(77,175,74)"/>
+<rect x="541.56" y="318.60" width="45.11" height="123.40" fill="rgb(228,26,28)"/>
+<rect x="618.13" y="110.84" width="45.11" height="331.16" fill="rgb(55,126,184)"/>
+<rect x="667.24" y="92.00" width="45.11" height="350.00" fill="rgb(77,175,74)"/>
+<rect x="716.36" y="185.48" width="45.11" height="256.52" fill="rgb(228,26,28)"/>
+<rect x="792.93" y="266.76" width="45.11" height="175.24" fill="rgb(55,126,184)"/>
+<rect x="842.04" y="259.00" width="45.11" height="183.00" fill="rgb(77,175,74)"/>
+<rect x="891.16" y="228.21" width="45.11" height="213.79" fill="rgb(228,26,28)"/>
+<rect x="78.00" y="513.00" width="14.00" height="14.00" fill="rgb(55,126,184)"/>
+<rect x="238.00" y="513.00" width="14.00" height="14.00" fill="rgb(77,175,74)"/>
+<rect x="398.00" y="513.00" width="14.00" height="14.00" fill="rgb(228,26,28)"/>
+<text x="490.00" y="30.00" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#222">Social Feed Ablation: Median Relative Time</text>
+<text x="24.00" y="253.00" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="400" text-anchor="middle" fill="#222">Median relative time</text>
+<text x="68.00" y="446.00" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="end" fill="#222">0.00</text>
+<text x="68.00" y="370.40" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="end" fill="#222">0.44</text>
+<text x="68.00" y="294.80" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="end" fill="#222">0.89</text>
+<text x="68.00" y="219.20" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="end" fill="#222">1.33</text>
+<text x="68.00" y="143.60" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="end" fill="#222">1.78</text>
+<text x="68.00" y="68.00" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="end" fill="#222">2.22</text>
+<text x="165.40" y="486.00" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="middle" fill="#222">LadderFull</text>
+<text x="340.20" y="486.00" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="middle" fill="#222">NoHint</text>
+<text x="515.00" y="486.00" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="middle" fill="#222">NoGallop</text>
+<text x="689.80" y="486.00" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="middle" fill="#222">HeapMerge</text>
+<text x="864.60" y="486.00" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="middle" fill="#222">StableMode</text>
+<text x="98.00" y="525.00" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="start" fill="#222">1M</text>
+<text x="258.00" y="525.00" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="start" fill="#222">10M</text>
+<text x="418.00" y="525.00" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" text-anchor="start" fill="#222">100M</text>
+</svg>

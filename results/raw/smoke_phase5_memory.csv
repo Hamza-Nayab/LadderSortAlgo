@@ -1,0 +1,6 @@
+dataset,n,algo,seed,round,time_sec,max_rss_bytes,k_final,k_over_n,used_fallback,sorted_ok,git_hash
+random,10000,RawLadderSort,1,1,0.000983250,1736704,196,0.019600000000,0,1,39b6fd8
+random,10000,HybridLadderSort,1,1,0.000346250,1654784,101,0.010100000000,1,1,39b6fd8
+random,10000,TimSort,1,1,0.000771875,1589248,196,0.019600000000,0,1,39b6fd8
+random,10000,StdSort,1,1,0.000196041,1523712,196,0.019600000000,0,1,39b6fd8
+random,10000,StableSort,1,1,0.000042750,1572864,196,0.019600000000,0,1,39b6fd8

@@ -1,0 +1,32 @@
+Main paper algorithms:
+- LadderSortRaw
+- LadderSortHybrid
+- TimSort
+- StdSort
+- StdStableSort
+- QuickSort
+- MergeSort
+
+Ablation variants:
+- LadderFull
+- NoHint
+- NoGallop
+- HeapMerge
+- StableMode
+
+Main datasets:
+- random
+- ascending
+- descending
+- band_limited
+- block_cyclic
+- riffle
+- social_feed
+- partial_index
+
+Special benchmarks:
+- post_insert_case
+- k_sweep
+- real_trace
+- memory
+- comparisons
