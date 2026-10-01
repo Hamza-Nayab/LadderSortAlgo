@@ -96,7 +96,7 @@ Input Sequence A of length N
 
 | Algorithm | Presortedness Measure | Interleaved Streams ($K \ll N$) | Contiguous Runs | Worst-Case Time | Aux. Memory |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **LadderSort (Raw)** | $\mathrm{LDS}(A) = K$ | **$O(N \log K)$** | $O(N)$ | $O(N K)$ | $O(N)$ |
+| **LadderSort (Raw)** | $\mathrm{LDS}(A) = K$ | **$O(N \log K)$** | $O(N)$ | **$O(N \log N)$** | $O(N)$ |
 | **LadderSort (Hybrid)** | $\mathrm{LDS}(A) = K$ | **$O(N \log K)$** | $O(N)$ | **$O(N \log N)$** | $O(N)$ |
 | **TimSort** [Auger et al.] | $\mathrm{Runs}(A)$ | $O(N \log N)$ | $O(N)$ | $O(N \log N)$ | $O(N)$ |
 | **PowerSort** [Munro & Wild] | $\mathrm{Runs}(A)$ | $O(N \log N)$ | $O(N)$ | $O(N \log N)$ | $O(N)$ |
