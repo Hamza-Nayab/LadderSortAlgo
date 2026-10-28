@@ -612,13 +612,9 @@ static void patience_sort(
 //    else prepend to the front of the first list whose front element is >= x,
 //    else start a new list. Plain double-ended greedy version, naive from literature.
 // 2. Plain K-way merge using the same generic std::priority_queue-based merge.
-struct EncroachingListEnds {
-    int front;
-    int back;
-};
-
-static std::vector<std::deque<int>>     g_encroaching_deques_ws;
-static std::vector<EncroachingListEnds> g_encroaching_ends_ws;
+static std::vector<std::deque<int>> g_encroaching_deques_ws;
+static std::vector<int>             g_encroaching_fronts_ws;
+static std::vector<int>             g_encroaching_backs_ws;
 
 static void encroaching_lists_sort(
     const std::vector<int>& a,
@@ -632,58 +628,50 @@ static void encroaching_lists_sort(
     }
 
     auto& deques = g_encroaching_deques_ws;
-    auto& ends = g_encroaching_ends_ws;
-    auto& piles = g_patience_piles_ws;
+    auto& fronts = g_encroaching_fronts_ws;
+    auto& backs  = g_encroaching_backs_ws;
+    auto& piles  = g_patience_piles_ws;
 
     deques.clear();
-    ends.clear();
+    fronts.clear();
+    backs.clear();
     piles.clear();
 
     deques.reserve(64);
-    ends.reserve(64);
+    fronts.reserve(64);
+    backs.reserve(64);
 
     // Initial list with a[0]
     deques.emplace_back();
     deques.back().push_back(a[0]);
-    ends.push_back({a[0], a[0]});
+    fronts.push_back(a[0]);
+    backs.push_back(a[0]);
 
     for (size_t i = 1; i < a.size(); ++i) {
         const int x = a[i];
 
-        int target_list = -1;
-        bool is_append = false;
-
-        // Try to append to the back of the first list whose back element is <= x
-        for (size_t j = 0; j < ends.size(); ++j) {
-            if (ends[j].back <= x) {
-                target_list = static_cast<int>(j);
-                is_append = true;
-                break;
-            }
-        }
-
-        // Else prepend to the front of the first list whose front element is >= x
-        if (target_list == -1) {
-            for (size_t j = 0; j < ends.size(); ++j) {
-                if (ends[j].front >= x) {
-                    target_list = static_cast<int>(j);
-                    is_append = false;
-                    break;
-                }
-            }
-        }
-
-        // Else start a new list
-        if (target_list == -1) {
-            deques.emplace_back();
-            deques.back().push_back(x);
-            ends.push_back({x, x});
-        } else if (is_append) {
-            deques[target_list].push_back(x);
-            ends[target_list].back = x;
+        // Skiena (1988): backs is nonincreasing (backs[0] >= backs[1] >= ...).
+        // Find the first list j where backs[j] <= x using binary search:
+        auto it_back = std::lower_bound(backs.begin(), backs.end(), x, std::greater<int>());
+        if (it_back != backs.end()) {
+            size_t j = static_cast<size_t>(std::distance(backs.begin(), it_back));
+            deques[j].push_back(x);
+            backs[j] = x;
         } else {
-            deques[target_list].push_front(x);
-            ends[target_list].front = x;
+            // Otherwise, fronts is nondecreasing (fronts[0] <= fronts[1] <= ...).
+            // Find the first list j where fronts[j] >= x using binary search:
+            auto it_front = std::lower_bound(fronts.begin(), fronts.end(), x);
+            if (it_front != fronts.end()) {
+                size_t j = static_cast<size_t>(std::distance(fronts.begin(), it_front));
+                deques[j].push_front(x);
+                fronts[j] = x;
+            } else {
+                // Else start a new encroaching list
+                deques.emplace_back();
+                deques.back().push_back(x);
+                fronts.push_back(x);
+                backs.push_back(x);
+            }
         }
     }
 
